@@ -49,6 +49,9 @@ if __name__ == '__main__':
 
     raw_crime_df.printSchema()
 
+    # Streaming readiness
+    print(f"Is the stream ready : {raw_crime_df.isStreaming}")
+
     # do the required transformations
     # Note : Below code added after output was captured - execute again for update result
     crime_df = raw_crime_df \
