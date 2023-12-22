@@ -1,0 +1,37 @@
+Step 1: Install jdk 8
+
+sudo apt-get update
+sudo apt-get install -y openjdk-8-jdk
+java -version
+javac -version
+
+# Download and extract kafka
+wget https://archive.apache.org/dist/kafka/2.2.0/kafka_2.12-2.2.0.tgz
+sudo tar xvzf kafka_2.12-2.2.0.tgz
+sudo chmod 777 kafka_2.12-2.2.0
+cd kafka_2.12-2.2.0
+
+
+##### >>>> To acess from outside<<<<<<<<
+sudo vi config/server.properties
+listeners=PLAINTEXT://<ip_or_dns>:9092
+sudo nohup bin/zookeeper-server-start.sh config/zookeeper.properties > ~/zookeeper.logs &
+ctrl+d / ctrl+c
+
+sudo nohup bin/kafka-server-start.sh config/server.properties > ~/kafka.logs &
+ctrl+d / ctrl+c
+
+
+### >>>Create a Topic<<<
+sudo bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+sudo bin/kafka-topics.sh --list --zookeeper localhost:2181
+
+sudo bin/kafka-console-producer.sh --broker-list <ip_or_dns>:9092 --topic test
+
+# Troubleshooting - Once Spark Job starts reading data from a topic, you should see a message like "Adding new member consumer-"
+# If not, check IP whitelisting
+tail -f ~/kafka-logs
+
+
+sudo bin/kafka-server-stop.sh
+sudo bin/zookeeper-server-stop.sh
