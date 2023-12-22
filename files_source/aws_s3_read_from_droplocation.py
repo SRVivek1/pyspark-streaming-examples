@@ -40,7 +40,7 @@ if __name__ == '__main__':
         .add('month', StringType(), True)
 
     s3_conf = app_conf['AWS_S3']
-    data_path = 's3a://' + s3_conf['READ_BUCKET'] + s3_conf['DROP_LOCATION']
+    data_path = 's3a://' + s3_conf['READ_BUCKET'] + '/' + s3_conf['DROP_LOCATION']
     crime_df = spark.readStream \
         .option('header', 'false') \
         .option('maxFilesPerTrigger', 2) \
