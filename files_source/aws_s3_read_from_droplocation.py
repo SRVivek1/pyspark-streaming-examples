@@ -20,8 +20,8 @@ if __name__ == '__main__':
 
     # read application config
     cur_dir = os.path.abspath(os.path.dirname(__file__))
-    app_conf = yaml.load(open(cur_dir + '/../../' + 'application.yml'), Loader=yaml.FullLoader)
-    secrets = yaml.load(open(cur_dir + '/../../' + '.secrets'), Loader=yaml.FullLoader)
+    app_conf = yaml.load(open(cur_dir + '/../' + 'application.yml'), Loader=yaml.FullLoader)
+    secrets = yaml.load(open(cur_dir + '/../' + '.secrets'), Loader=yaml.FullLoader)
 
     # AWS config
     aws_access = secrets['AWS_ACCESS']
