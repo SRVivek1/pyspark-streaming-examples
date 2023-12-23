@@ -82,6 +82,82 @@ if __name__ == '__main__':
 #
 # Output
 # ------------
+# root
+#  |-- city_code: string (nullable = true)
+#  |-- city: string (nullable = true)
+#  |-- major_category: string (nullable = true)
+#  |-- minor_category: string (nullable = true)
+#  |-- value: string (nullable = true)
+#  |-- year: string (nullable = true)
+#  |-- month: string (nullable = true)
 #
+# Is the stream ready : True
+# -------------------------------------------
+# Batch: 0
+# -------------------------------------------
+# +---------------------------+-----------+
+# |major_category             |convictions|
+# +---------------------------+-----------+
+# |Theft and Handling         |50.0       |
+# |Violence Against the Person|44.0       |
+# |Criminal Damage            |9.0        |
+# |Burglary                   |4.0        |
+# |Other Notifiable Offences  |4.0        |
+# |Drugs                      |2.0        |
+# |Robbery                    |1.0        |
+# |Fraud or Forgery           |0.0        |
+# |Sexual Offences            |0.0        |
+# +---------------------------+-----------+
+#
+# -------------------------------------------
+# Batch: 1
+# -------------------------------------------
+# +---------------------------+-----------+
+# |major_category             |convictions|
+# +---------------------------+-----------+
+# |Theft and Handling         |81.0       |
+# |Violence Against the Person|63.0       |
+# |Burglary                   |26.0       |
+# |Criminal Damage            |19.0       |
+# |Other Notifiable Offences  |9.0        |
+# |Drugs                      |6.0        |
+# |Robbery                    |2.0        |
+# |Fraud or Forgery           |0.0        |
+# |Sexual Offences            |0.0        |
+# +---------------------------+-----------+
+#
+# -------------------------------------------
+# Batch: 2
+# -------------------------------------------
+# +---------------------------+-----------+
+# |major_category             |convictions|
+# +---------------------------+-----------+
+# |Theft and Handling         |132.0      |
+# |Violence Against the Person|93.0       |
+# |Burglary                   |35.0       |
+# |Criminal Damage            |27.0       |
+# |Other Notifiable Offences  |12.0       |
+# |Drugs                      |8.0        |
+# |Robbery                    |2.0        |
+# |Fraud or Forgery           |0.0        |
+# |Sexual Offences            |0.0        |
+# +---------------------------+-----------+
+#
+# -------------------------------------------
+# Batch: 3
+# -------------------------------------------
+# +---------------------------+-----------+
+# |major_category             |convictions|
+# +---------------------------+-----------+
+# |Theft and Handling         |163.0      |
+# |Violence Against the Person|134.0      |
+# |Burglary                   |43.0       |
+# |Criminal Damage            |34.0       |
+# |Other Notifiable Offences  |17.0       |
+# |Drugs                      |14.0       |
+# |Robbery                    |10.0       |
+# |Fraud or Forgery           |0.0        |
+# |Sexual Offences            |0.0        |
+# +---------------------------+-----------+
 #
 #
