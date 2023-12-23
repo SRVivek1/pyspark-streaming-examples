@@ -37,7 +37,7 @@ if __name__ == '__main__':
     kafka_conf = app_conf['KAFKA_CONF']
     input_df = spark.readStream \
         .format('kafka') \
-        .option('kafka.bootstrap.servers', kafka_conf['SERVER'] + ':' + kafka_conf['PORT']) \
+        .option('kafka.bootstrap.servers', kafka_conf['SERVER'] + ':9092') \
         .option('subscribe', kafka_conf['TOPIC'])\
         .load()
 
