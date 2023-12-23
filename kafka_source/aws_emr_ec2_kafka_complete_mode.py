@@ -44,6 +44,9 @@ if __name__ == '__main__':
     # Do the required transformation
 
     # Write data to console
+    # Note:
+    # Append output mode not supported when there are streaming aggregations on streaming DataFrames/DataSets without watermark;
+    #
     checkpointLocation = 's3a://' + app_conf['AWS_S3']['WRITE_BUCKET'] + '/' + kafka_conf['KAFKA_CHECKPOINT_LOCATION']
     streaming_query = input_df \
         .selectExpr('CAST(value as STRING)') \
@@ -52,7 +55,7 @@ if __name__ == '__main__':
         .groupBy("value") \
         .agg(count("value")) \
         .writeStream \
-        .outputMode('append') \
+        .outputMode('complete') \
         .format('console') \
         .option('checkpointLocation', checkpointLocation) \
         .start() \
