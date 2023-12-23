@@ -59,13 +59,14 @@ if __name__ == '__main__':
         .withColumnRenamed("value", "convictions")
 
     # Write the data to console
-    crime_df.writeStream \
+    query = crime_df.writeStream \
         .outputMode('append') \
         .option('truncate', 'false') \
         .option('numRows', 10) \
         .format('console') \
         .start() \
         .awaitTermination()
+
 #
 # command
 # -------------------
@@ -74,8 +75,7 @@ if __name__ == '__main__':
 # Environment
 # ----------------
 # 1. AWS EC2 - Kafka server
-# 2. DataBrick community spark cluster
-# 3. AWS EMR (running 1 test case)
+# 2. AWS EMR (running 1 test case)
 #
 # Output
 # ----------------
