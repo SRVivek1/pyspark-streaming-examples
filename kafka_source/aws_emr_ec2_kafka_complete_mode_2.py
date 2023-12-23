@@ -50,6 +50,9 @@ if __name__ == '__main__':
         .agg(count("value"))
 
     # Write data to console
+    # Note:
+    # Append output mode not supported when there are streaming aggregations on streaming DataFrames/DataSets without watermark;
+    #
     checkpointLocation = 's3a://' + app_conf['AWS_S3']['WRITE_BUCKET'] + '/' + kafka_conf['KAFKA_CHECKPOINT_LOCATION']
     streaming_query = transformed_df \
         .writeStream \
