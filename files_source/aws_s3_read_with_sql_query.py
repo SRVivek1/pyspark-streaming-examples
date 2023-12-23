@@ -74,13 +74,14 @@ if __name__ == '__main__':
 #
 # Command
 # -----------------
-# spark-submit --packages "org.apache.hadoop"
+# spark-submit --packages "org.apache.hadoop:hadoop-aws:2.7.4" --master yarn ./program.py
 #
 # Platform - AWS ERM
 # ------------------------
 #
+#
 # Output
 # ------------
-# Yet to run
+#
 #
 #

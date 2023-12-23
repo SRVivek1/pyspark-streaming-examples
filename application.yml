@@ -3,3 +3,9 @@ AWS_S3:
   DROP_LOCATION: droplocation
   WRITE_BUCKET: vsingh-spark-apps-write-data
   WRITE_LOCATION: stream-write
+
+KAFKA_CONF:
+  SERVER: ec2-34-243-68-20.eu-west-1.compute.amazonaws.com
+  PORT: 9092
+  TOPIC: testmq
+  KAFKA_CHECKPOINT_LOCATION: kafka-checkpoint-location
